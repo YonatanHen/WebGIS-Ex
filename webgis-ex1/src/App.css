@@ -1,2 +1,23 @@
 body { margin: 0; padding: 0; }
-div #map { position: fixed; top: 0; bottom: 0; width: 50%; }
+#map {  
+  width: 80%;
+  height: 70%;
+  left: 10%;
+  }
+
+.calculation-box {
+height: 75px;
+width: 150px;
+position: absolute;
+bottom: 40px;
+left: 10px;
+background-color: rgba(255, 255, 255, 0.9);
+padding: 15px;
+text-align: center;
+}
+ 
+p {
+font-family: 'Open Sans';
+margin: 0;
+font-size: 13px;
+}

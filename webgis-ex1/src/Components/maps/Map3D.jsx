@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Map extends React.Component {
+class Map3D extends React.Component {
 
   componentDidMount () {
     const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ'
@@ -68,4 +68,4 @@ class Map extends React.Component {
   }
 }
 
-export default Map;
+export default Map3D;
