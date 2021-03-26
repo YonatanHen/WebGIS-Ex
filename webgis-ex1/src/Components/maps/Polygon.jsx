@@ -34,7 +34,7 @@ class Polygon extends React.Component {
     answer.innerHTML =
     '<p><strong>' +
     rounded_area +
-    '</strong></p><p>square meters</p>';
+    '</strong></p><p>square meters in total</p>';
     } else {
     answer.innerHTML = '';
     if (e.type !== 'draw.delete')
