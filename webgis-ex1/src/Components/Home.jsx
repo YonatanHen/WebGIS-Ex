@@ -24,6 +24,9 @@ class Home extends Component{
     render(){
         return(
             <>
+            {/* TODO: The code do not need to be inside an header (i.e it suppose to be in div, empty <> etc.)
+            Also, the background isn't prominent when scrolling down (there is a white part when footer created and there was
+            white part too before but it fixed) */}
                 <header className="masthead">
                     <div className="container h-100">
                         <div className=" h-100 align-items-center justify-content-center text-center">
@@ -40,6 +43,9 @@ class Home extends Component{
                         </div>
                     </div>
                 </header>
+                <footer className=" h-100 align-items-center justify-content-center text-center">
+                    {"Created by Yehonatan Hen & Ariel Turchinsky"}
+                </footer>
             </>
         );
     };
