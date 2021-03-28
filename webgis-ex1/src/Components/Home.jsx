@@ -43,7 +43,7 @@ class Home extends Component{
                         </div>
                     </div>
                 </header>
-                <footer className=" h-100 align-items-center justify-content-center text-center">
+                <footer className="align-items-center justify-content-center text-center">
                     {"Created by Yehonatan Hen & Ariel Turchinsky"}
                 </footer>
             </>
