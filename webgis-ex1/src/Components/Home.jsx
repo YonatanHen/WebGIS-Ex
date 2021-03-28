@@ -24,10 +24,7 @@ class Home extends Component{
     render(){
         return(
             <>
-            {/* TODO: The code do not need to be inside an header (i.e it suppose to be in div, empty <> etc.)
-            Also, the background isn't prominent when scrolling down (there is a white part when footer created and there was
-            white part too before but it fixed) */}
-                <header className="masthead">
+                <div className="masthead">
                     <div className="container h-100">
                         <div className=" h-100 align-items-center justify-content-center text-center">
                         <h1>MapBox - WebGIS site</h1><br/>
@@ -37,15 +34,13 @@ class Home extends Component{
                             <Dropdown.Item as="button">Something else</Dropdown.Item>
                         </DropdownButton>
                         <br/>
-                        <div id="map"></div>
+                        <div id="map" className="map-container"></div>
                         <br/>
                         {this.state.map}
+                        {"Created by Yehonatan Hen & Ariel Turchinsky"}
                         </div>
                     </div>
-                </header>
-                <footer className="align-items-center justify-content-center text-center">
-                    {"Created by Yehonatan Hen & Ariel Turchinsky"}
-                </footer>
+                </div>
             </>
         );
     };

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "mapbox-gl": "^2.1.1",
     "react": "^17.0.0",
     "react-bootstrap": "^1.5.2",
