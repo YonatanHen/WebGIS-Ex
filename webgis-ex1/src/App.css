@@ -9,6 +9,10 @@ body {
 
 }
 
+h1 {
+  color: rgb(100, 98, 98)
+}
+
 #map {  
   width: 80%;
   height: 70%;
@@ -73,4 +77,9 @@ footer {
   .container {
     max-width: 1140px;
   }
+}
+
+#dropdown-item-button {
+  background-color:rgb(100, 98, 98);
+  border-color: rgba(255, 255, 255, 0.9);
 }

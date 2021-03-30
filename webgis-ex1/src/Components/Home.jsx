@@ -28,7 +28,7 @@ class Home extends Component{
                     <div className="container h-100">
                         <div className=" h-100 align-items-center justify-content-center text-center">
                         <h1>MapBox - WebGIS site</h1><br/>
-                        <DropdownButton id="dropdown-item-button" title="Dropdown button">
+                        <DropdownButton id="dropdown-item-button" title="Choose a map">
                             <Dropdown.Item as="button" className="3d" onClick={this.handle3d}>3D Buildings</Dropdown.Item>
                             <Dropdown.Item as="button" className="poly" onClick={this.handlePoly}>Draw Polygon</Dropdown.Item>
                             <Dropdown.Item as="button">Something else</Dropdown.Item>
