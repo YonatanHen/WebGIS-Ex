@@ -14,11 +14,14 @@ class Home extends Component{
     }
 
     handle3d = () => {
+        document.querySelector('.mapboxgl-control-container').remove();
         this.setState({map: <Map3D/>})
     }
 
     handlePoly = () => {
+        document.querySelector('.mapboxgl-control-container').remove();
         this.setState({map: <Polygon/>})
+       
     }
 
     render(){
@@ -34,9 +37,10 @@ class Home extends Component{
                             <Dropdown.Item as="button">Something else</Dropdown.Item>
                         </DropdownButton>
                         <br/>
-                        <div id="map" className="map-container"></div>
+                        <div id="map" className="map-container">
+                            {this.state.map}
+                        </div>
                         <br/>
-                        {this.state.map}
                         {"Created by Yehonatan Hen & Ariel Turchinsky"}
                         </div>
                     </div>
