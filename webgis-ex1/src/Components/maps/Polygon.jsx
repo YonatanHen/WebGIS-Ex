@@ -25,7 +25,7 @@ class Polygon extends React.Component {
     var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/satellite-v9', //hosted style id
-    center: [-91.874, 42.76], // starting position
+    center: [34.639158, 31.793061], // starting position
     zoom: 12 // starting zoom
     });
      

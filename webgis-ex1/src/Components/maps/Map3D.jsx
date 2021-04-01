@@ -19,8 +19,8 @@ class Map3D extends React.Component {
     const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ'
     var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-74.0066, 40.7135],
-    zoom: 15.5,
+    center: [34.639158, 31.793061],
+    zoom: 16.5,
     pitch: 45,
     bearing: -17.6,
     container: 'map',
