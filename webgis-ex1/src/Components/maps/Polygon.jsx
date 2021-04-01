@@ -15,7 +15,9 @@ class Polygon extends React.Component {
       click on the left mouse button to mark his edges, double click will draw the last edge.<br/>
       <b>Erase polygon:</b> Click on the trash icon in the top-right inside the map. <br/>
       <b>Relocate polygon: </b> When polygon is appearing on the map, be aware about the color
-      of the polygon - if it's blue, click on him and then you can relocate it to new place.
+      of the polygon - if it's blue, click on him and then you can relocate it to new place.<br/>
+      <b>Modify polygon: </b> click on the dots in the middle of polygon sides to resize polygon, to delete dot, click on
+      the desired edge and then on delete button in the keyboard.
        </p>
     }
   }
