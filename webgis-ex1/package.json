@@ -14,12 +14,13 @@
     "worker-loader": "^3.0.7"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "browserslist": [
     "defaults"
   ],
   "author": "Mapbox",
   "license": "MIT",
-  "homepage": ""
+  "homepage": "."
 }

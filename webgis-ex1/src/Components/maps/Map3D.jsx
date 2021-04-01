@@ -1,6 +1,19 @@
 import React from 'react';
+import Guide from '../guide';
 
 class Map3D extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      guidance: <p>
+      <b>Traveling on the map:</b> hold the left mouse button,
+      then drag the mouse to the desired location and release.<br/>
+      <b>Change map angle:</b> hold the right mouse button,
+      then drag the mouse to the desired angle.<br/>
+      <b>Zoom in/out:</b> use the middle mouse button pulley to scroll in/out accordingly.
+       </p>
+    }
+  }
 
   componentDidMount () {
     const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ'
@@ -63,7 +76,10 @@ class Map3D extends React.Component {
 
   render() {
     return (
-    <noscript/>
+      <>
+        <Guide guidance = {this.state.guidance}/>
+        <noscript/>
+    </>
     )
   }
 }
