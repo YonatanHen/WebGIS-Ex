@@ -61,6 +61,7 @@ class Polygon extends React.Component {
     alert('Use the draw tools to draw a polygon!');
     }
     }
+    map.addControl(new mapboxgl.FullscreenControl())
 `;
     new Function(code)();
   }

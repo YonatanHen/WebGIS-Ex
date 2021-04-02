@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Map3D from './maps/Map3D'
 import Polygon from './maps/Polygon';
+import Distance from './maps/Distance';
 import {Dropdown, DropdownButton} from 'react-bootstrap'
 
 class Home extends Component{
@@ -11,6 +12,7 @@ class Home extends Component{
         }
         this.handle3d = this.handle3d.bind(this)
         this.handlePoly = this.handlePoly.bind(this)
+        this.handleDistance = this.handleDistance.bind(this)
     }
 
     handle3d = () => {
@@ -24,6 +26,12 @@ class Home extends Component{
        
     }
 
+    handleDistance = () => {
+        document.querySelector('.mapboxgl-control-container').remove();
+        this.setState({map: <Distance/>})
+       
+    }
+
     render(){
         return(
             <>
@@ -34,7 +42,7 @@ class Home extends Component{
                         <DropdownButton id="dropdown-item-button" title="Choose a map">
                             <Dropdown.Item as="button" className="3d" onClick={this.handle3d}>3D Buildings</Dropdown.Item>
                             <Dropdown.Item as="button" className="poly" onClick={this.handlePoly}>Draw Polygon</Dropdown.Item>
-                            <Dropdown.Item as="button">Something else</Dropdown.Item>
+                            <Dropdown.Item as="button" onClick={this.handleDistance}>Distance</Dropdown.Item>
                         </DropdownButton>
                         <br/>
                         <div id="map" className="map-container">

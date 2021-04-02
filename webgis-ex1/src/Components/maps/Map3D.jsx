@@ -69,7 +69,9 @@ class Map3D extends React.Component {
     
     labelLayerId
     );
-    });`;
+    });
+    
+    map.addControl(new mapboxgl.FullscreenControl())`;
     new Function(code)();
   }
 
