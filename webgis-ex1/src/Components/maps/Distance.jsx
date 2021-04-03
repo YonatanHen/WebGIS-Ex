@@ -1,5 +1,6 @@
 import React from 'react';
 import Guide from '../guide';
+import Menu from '../Menu';
 
 class Distance extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Distance extends React.Component {
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [2.3399, 48.8555],
+    center: [34.639158, 31.793061],
     zoom: 12
     });
      
@@ -136,7 +137,19 @@ class Distance extends React.Component {
     : 'crosshair';
     });
     
-    map.addControl(new mapboxgl.FullscreenControl())`;
+    map.addControl(new mapboxgl.FullscreenControl())
+    var layerList = document.getElementById('menu');
+    var inputs = layerList.getElementsByTagName('input');
+ 
+    function switchLayer(layer) {
+    var layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId);
+    }
+ 
+    for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onclick = switchLayer;
+    }
+    `;
     new Function(code)();
   }
 
@@ -144,12 +157,8 @@ class Distance extends React.Component {
   render() {
     return (
       <>
-<<<<<<< HEAD
-        <Guide guidance = {undefined}/>
-        <div id="map"></div>
-=======
         <Guide guidance = {this.state.guidance}/>
->>>>>>> db8c36fb59cb79ac2df61f5c5ea39fe390b02e90
+        <Menu></Menu>
         <div id="distance" class="distance-container"></div>
     </>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import Guide from '../guide';
+import Menu from '../Menu';
 
 class Polygon extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Polygon extends React.Component {
       <b>Relocate polygon: </b> When polygon is appearing on the map, be aware about the color
       of the polygon - if it's blue, click on him and then you can relocate it to new place.<br/>
       <b>Modify polygon: </b> click on the dots in the middle of polygon sides to resize polygon, to delete dot, click on
-      the desired edge and then on delete button in the keyboard.</>
+      the desired edge and then on delete button in the keyboard.
+      </>
     }
   }
 
@@ -56,6 +58,18 @@ class Polygon extends React.Component {
     }
     }
     map.addControl(new mapboxgl.FullscreenControl())
+
+    var layerList = document.getElementById('menu');
+    var inputs = layerList.getElementsByTagName('input');
+ 
+    function switchLayer(layer) {
+    var layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId);
+    }
+ 
+    for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onclick = switchLayer;
+    }
 `;
     new Function(code)();
   }
@@ -64,14 +78,15 @@ class Polygon extends React.Component {
   render() {
     return (
         <>
-        <Guide guidance = {this.state.guidance}/>
-        <div class="calculation-box">
-            <p>
-              Draw a polygon using the draw tools.
-              <div id="calculated-area"></div>
-            </p>
-        </div>
-    </>
+          <Guide guidance = {this.state.guidance}/>
+          <Menu></Menu>
+          <div class="calculation-box">
+              <p>
+                Draw a polygon using the draw tools.
+                <div id="calculated-area"></div>
+              </p>
+          </div>
+         </>
     )
   }
 }

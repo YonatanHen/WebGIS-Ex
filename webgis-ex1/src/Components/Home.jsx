@@ -1,154 +1,68 @@
-import React from 'react';
-import Guide from '../guide';
+import React, {Component} from 'react';
+import Map3D from './maps/Map3D'
+import Polygon from './maps/Polygon';
+import Distance from './maps/Distance';
+import {Dropdown, DropdownButton} from 'react-bootstrap'
 
-class Distance extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      guidance: <>
-      <b>Draw line:</b> click on the map to draw a line.<br/>
-      <b>Delete line:</b> click on desired dot to delete the line which finished in this dot, new line will
-      adujested automatically.
-      </>
+class Home extends Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            map: <Map3D/>
+        }
+        this.handle3d = this.handle3d.bind(this)
+        this.handlePoly = this.handlePoly.bind(this)
+        this.handleDistance = this.handleDistance.bind(this)
+        this.removeContainer = this.removeContainer.bind(this)
     }
-  }
 
-  componentDidMount () {
-    const code = `mapboxgl.accessToken = 'pk.eyJ1IjoiYXJpZWw3NTkwIiwiYSI6ImNrbW52aWNxNjF5YmEyb3FrcDJkYjNsc2UifQ.uu-RzcMu1ypk7CXNbLT4Qg';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [2.3399, 48.8555],
-    zoom: 12
-    });
-     
-    var distanceContainer = document.getElementById('distance');
-     
-    // GeoJSON object to hold our measurement features
-    var geojson = {
-    'type': 'FeatureCollection',
-    'features': []
+    removeContainer = () => {
+        if(document.querySelector('.mapboxgl-control-container')){
+            document.querySelector('.mapboxgl-control-container').remove();
+        }
+    }
+
+    handle3d = () => {
+        this.removeContainer()
+        this.setState({map: <Map3D/>})
+    }
+
+    handlePoly = () => {
+        this.removeContainer()
+        this.setState({map: <Polygon/>})
+       
+    }
+
+    handleDistance = () => {
+        this.removeContainer()
+        this.setState({map: <Distance/>})
+       
+    }
+
+    render(){
+        return(
+            <>
+                <div className="masthead">
+                    <div className="container h-100">
+                        <div className=" h-100 align-items-center justify-content-center text-center">
+                        <h1>MapBox - WebGIS site</h1><br/>
+                        <DropdownButton id="dropdown-item-button" title="Choose a map">
+                            <Dropdown.Item as="button" className="3d" onClick={this.handle3d}>3D Buildings</Dropdown.Item>
+                            <Dropdown.Item as="button" className="poly" onClick={this.handlePoly}>Draw Polygon</Dropdown.Item>
+                            <Dropdown.Item as="button" onClick={this.handleDistance}>Distance</Dropdown.Item>
+                        </DropdownButton>
+                        <br/>
+                        <div id="map" className="map-container">
+                            {this.state.map}
+                        </div>        
+                        <br/>
+                        <span style={{color:'white'}}>{"Created by Yehonatan Hen & Ariel Turchinsky"}</span>
+                        </div>
+                    </div>
+                </div>
+            </>
+        );
     };
-     
-    // Used to draw a line between points
-    var linestring = {
-    'type': 'Feature',
-    'geometry': {
-    'type': 'LineString',
-    'coordinates': []
-    }
-    };
-     
-    map.on('load', function () {
-    map.addSource('geojson', {
-    'type': 'geojson',
-    'data': geojson
-    });
-     
-    // Add styles to the map
-    map.addLayer({
-    id: 'measure-points',
-    type: 'circle',
-    source: 'geojson',
-    paint: {
-    'circle-radius': 5,
-    'circle-color': '#000'
-    },
-    filter: ['in', '$type', 'Point']
-    });
-    map.addLayer({
-    id: 'measure-lines',
-    type: 'line',
-    source: 'geojson',
-    layout: {
-    'line-cap': 'round',
-    'line-join': 'round'
-    },
-    paint: {
-    'line-color': '#000',
-    'line-width': 2.5
-    },
-    filter: ['in', '$type', 'LineString']
-    });
-     
-    map.on('click', function (e) {
-    var features = map.queryRenderedFeatures(e.point, {
-    layers: ['measure-points']
-    });
-     
-    // Remove the linestring from the group
-    // So we can redraw it based on the points collection
-    if (geojson.features.length > 1) geojson.features.pop();
-     
-    // Clear the Distance container to populate it with a new value
-    distanceContainer.innerHTML = '';
-     
-    // If a feature was clicked, remove it from the map
-    if (features.length) {
-    var id = features[0].properties.id;
-    geojson.features = geojson.features.filter(function (point) {
-    return point.properties.id !== id;
-    });
-    } else {
-    var point = {
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [e.lngLat.lng, e.lngLat.lat]
-    },
-    'properties': {
-    'id': String(new Date().getTime())
-    }
-    };
-     
-    geojson.features.push(point);
-    }
-     
-    if (geojson.features.length > 1) {
-    linestring.geometry.coordinates = geojson.features.map(
-    function (point) {
-    return point.geometry.coordinates;
-    }
-    );
-     
-    geojson.features.push(linestring);
-     
-    // Populate the distanceContainer with total distance
-    var value = document.createElement('pre');
-    value.textContent =
-    'Total distance: ' +
-    turf.length(linestring).toLocaleString() +
-    'km';
-    distanceContainer.appendChild(value);
-    }
-     
-    map.getSource('geojson').setData(geojson);
-    });
-    });
-     
-    map.on('mousemove', function (e) {
-    var features = map.queryRenderedFeatures(e.point, {
-    layers: ['measure-points']
-    });
-    // UI indicator for clicking/hovering a point on the map
-    map.getCanvas().style.cursor = features.length
-    ? 'pointer'
-    : 'crosshair';
-    });
-    
-    map.addControl(new mapboxgl.FullscreenControl())`;
-    new Function(code)();
-  }
-
-
-  render() {
-    return (
-      <>
-        <Guide guidance = {this.state.guidance}/>
-        <div id="distance" class="distance-container"></div>
-    </>
-    )
-  }
 }
 
-export default Distance;
+export default Home;

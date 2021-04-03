@@ -119,3 +119,18 @@ footer {
   padding: 5px 10px;
   border-radius: 3px;
   }
+
+  #menu {
+    height: auto;
+    width: 18%;
+    position: fixed;
+    bottom: 38%;
+    left: 2%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: auto;
+    text-align: center;
+    background: #efefef;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 10%;
+    }
