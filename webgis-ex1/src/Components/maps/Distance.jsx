@@ -4,6 +4,13 @@ import Guide from '../guide';
 class Distance extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      guidance: <>
+      <b>Draw line:</b> click on the map to draw a line.<br/>
+      <b>Delete line:</b> click on desired dot to delete the line which finished in this dot, new line will
+      adujested automatically.
+      </>
+    }
   }
 
   componentDidMount () {
@@ -137,8 +144,8 @@ class Distance extends React.Component {
   render() {
     return (
       <>
-        <Guide guidance = {undefined}/>
-        <noscript/>
+        <Guide guidance = {this.state.guidance}/>
+        <div id="distance" class="distance-container"></div>
     </>
     )
   }
