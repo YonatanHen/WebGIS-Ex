@@ -13,21 +13,28 @@ class Home extends Component{
         this.handle3d = this.handle3d.bind(this)
         this.handlePoly = this.handlePoly.bind(this)
         this.handleDistance = this.handleDistance.bind(this)
+        this.removeContainer = this.removeContainer.bind(this)
+    }
+
+    removeContainer = () => {
+        if(document.querySelector('.mapboxgl-control-container')){
+            document.querySelector('.mapboxgl-control-container').remove();
+        }
     }
 
     handle3d = () => {
-        document.querySelector('.mapboxgl-control-container').remove();
+        this.removeContainer()
         this.setState({map: <Map3D/>})
     }
 
     handlePoly = () => {
-        document.querySelector('.mapboxgl-control-container').remove();
+        this.removeContainer()
         this.setState({map: <Polygon/>})
        
     }
 
     handleDistance = () => {
-        document.querySelector('.mapboxgl-control-container').remove();
+        this.removeContainer()
         this.setState({map: <Distance/>})
        
     }
