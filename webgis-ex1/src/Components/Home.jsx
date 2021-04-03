@@ -56,7 +56,7 @@ class Home extends Component{
                             {this.state.map}
                         </div>
                         <br/>
-                        {"Created by Yehonatan Hen & Ariel Turchinsky"}
+                        <p style={{color:"white"}}>{"Created by Yehonatan Hen & Ariel Turchinsky"}</p>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ class Polygon extends React.Component {
     const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ';
     var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/satellite-v9', //hosted style id
+    style: 'mapbox://styles/mapbox/streets-v11', //hosted style id
     center: [34.639158, 31.793061], // starting position
     zoom: 12 // starting zoom
     });

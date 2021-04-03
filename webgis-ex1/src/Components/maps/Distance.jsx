@@ -7,7 +7,7 @@ class Distance extends React.Component {
   }
 
   componentDidMount () {
-    const code = `mapboxgl.accessToken = 'pk.eyJ1IjoiYXJpZWw3NTkwIiwiYSI6ImNrbW52aWNxNjF5YmEyb3FrcDJkYjNsc2UifQ.uu-RzcMu1ypk7CXNbLT4Qg';
+    const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ';
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
@@ -138,7 +138,8 @@ class Distance extends React.Component {
     return (
       <>
         <Guide guidance = {undefined}/>
-        <noscript/>
+        <div id="map"></div>
+        <div id="distance" class="distance-container"></div>
     </>
     )
   }
