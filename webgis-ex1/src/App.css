@@ -94,6 +94,7 @@ footer {
   background-color:rgb(247, 182, 4);
   border-color: rgba(8, 8, 8, 0.9);
   color:black;
+  box-shadow: 0px 0px 3px #000;
 }
 
 #dropdown-item-button:hover {
@@ -127,10 +128,13 @@ footer {
     bottom: 38%;
     left: 2%;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: auto;
     text-align: center;
     background: #efefef;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
     margin-right: 10%;
+    }
+
+    label{
+      margin-right: 4%;
     }
