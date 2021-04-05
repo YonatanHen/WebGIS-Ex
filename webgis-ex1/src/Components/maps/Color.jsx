@@ -61,6 +61,7 @@ class Color extends React.Component {
   });
   swatches.appendChild(swatch);
   });
+  map.addControl(new mapboxgl.FullscreenControl())
     `;
     new Function(code)();
   }
