@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Map3D from './maps/Map3D'
 import Polygon from './maps/Polygon';
-import Distance from './maps/Distance';
+import Color from './maps/Color';
 import {Dropdown, DropdownButton} from 'react-bootstrap'
 
 class Home extends Component{
@@ -12,7 +12,7 @@ class Home extends Component{
         }
         this.handle3d = this.handle3d.bind(this)
         this.handlePoly = this.handlePoly.bind(this)
-        this.handleDistance = this.handleDistance.bind(this)
+        this.handleColor = this.handleColor.bind(this)
         this.removeContainer = this.removeContainer.bind(this)
     }
 
@@ -33,9 +33,9 @@ class Home extends Component{
        
     }
 
-    handleDistance = () => {
+    handleColor = () => {
         this.removeContainer()
-        this.setState({map: <Distance/>})
+        this.setState({map: <Color/>})
        
     }
 
@@ -48,7 +48,7 @@ class Home extends Component{
                         <h1>MapBox - WebGIS site</h1><br/>
                         <DropdownButton id="dropdown-item-button" title="Choose a feature">
                             <Dropdown.Item as="button" className="poly" onClick={this.handlePoly}>Draw Polygon</Dropdown.Item>
-                            <Dropdown.Item as="button" onClick={this.handleDistance}>Measure Distance</Dropdown.Item>
+                            <Dropdown.Item as="button" onClick={this.handleColor}>Change a layer's color</Dropdown.Item>
                             <Dropdown.Item as="button" className="3d" onClick={this.handle3d}>3D Buildings</Dropdown.Item>
                         </DropdownButton>
                         <br/>
