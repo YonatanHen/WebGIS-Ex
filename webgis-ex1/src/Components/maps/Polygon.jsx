@@ -1,5 +1,6 @@
 import React from 'react';
 import Guide from '../guide';
+import Menu from '../Menu';
 
 class Polygon extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Polygon extends React.Component {
       <b>Relocate polygon: </b> When polygon is appearing on the map, be aware about the color
       of the polygon - if it's blue, click on him and then you can relocate it to new place.<br/>
       <b>Modify polygon: </b> click on the dots in the middle of polygon sides to resize polygon, to delete dot, click on
-      the desired edge and then on delete button in the keyboard.</>
+      the desired edge and then on delete button in the keyboard.
+      </>
     }
   }
 
@@ -20,7 +22,7 @@ class Polygon extends React.Component {
     const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ';
     var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/satellite-v9', //hosted style id
+    style: 'mapbox://styles/mapbox/streets-v11', //hosted style id
     center: [34.639158, 31.793061], // starting position
     zoom: 12 // starting zoom
     });
@@ -56,6 +58,18 @@ class Polygon extends React.Component {
     }
     }
     map.addControl(new mapboxgl.FullscreenControl())
+
+    var layerList = document.getElementById('menu');
+    var inputs = layerList.getElementsByTagName('input');
+ 
+    function switchLayer(layer) {
+    var layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId);
+    }
+ 
+    for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onclick = switchLayer;
+    }
 `;
     new Function(code)();
   }

@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  color: rgb(100, 98, 98)
+  color: rgb(252, 252, 252)
 }
 
 #map {  
@@ -91,8 +91,16 @@ footer {
 }
 
 #dropdown-item-button {
-  background-color:rgb(100, 98, 98);
+  background-color:rgb(247, 182, 4);
+  border-color: rgba(8, 8, 8, 0.9);
+  color:black;
+  box-shadow: 0px 0px 3px #000;
+}
+
+#dropdown-item-button:hover {
   border-color: rgba(255, 255, 255, 0.9);
+  color:rgb(255, 255, 255);
+  box-shadow: 0px 0px 23px #ffffff;
 }
 
 .distance-container {
@@ -117,7 +125,7 @@ footer {
     height: auto;
     width: 18%;
     position: fixed;
-    bottom: 8%;
+    bottom: 38%;
     left: 2%;
     background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
