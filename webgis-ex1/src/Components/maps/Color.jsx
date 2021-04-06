@@ -6,9 +6,9 @@ class Color extends React.Component {
     super(props)
     this.state = {
       guidance: <>
-      <b>Draw line:</b> click on the map to draw a line.<br/>
-      <b>Delete line:</b> click on desired dot to delete the line which finished in this dot, new line will
-      adujested automatically.
+      <b>Select layer:</b> click on the combo-box below and choose between water or buildings.<br/>
+      <b>Choose a color:</b> click on the color you want to change the layer's color
+      <div class="map-overlay top">
             <div class="map-overlay-inner">
               <fieldset>
                 <label>Select layer</label>
@@ -22,6 +22,7 @@ class Color extends React.Component {
                <div id="swatches"></div>
               </fieldset>
            </div>
+        </div>
       </>
     }
   }

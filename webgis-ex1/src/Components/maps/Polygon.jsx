@@ -58,7 +58,6 @@ class Polygon extends React.Component {
     }
     }
     map.addControl(new mapboxgl.FullscreenControl())
-
     var layerList = document.getElementById('menu');
     var inputs = layerList.getElementsByTagName('input');
  
@@ -94,4 +93,3 @@ class Polygon extends React.Component {
 }
 
 export default Polygon;
-
