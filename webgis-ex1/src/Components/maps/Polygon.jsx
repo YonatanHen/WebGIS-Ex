@@ -78,8 +78,10 @@ class Polygon extends React.Component {
   render() {
     return (
         <>
+          <div className="flex-wrapper">
           <Guide guidance = {this.state.guidance}/>
-          <Menu/>
+            <Menu/>
+          </div>
           <div class="calculation-box">
               <p>
                 Draw a polygon using the draw tools.

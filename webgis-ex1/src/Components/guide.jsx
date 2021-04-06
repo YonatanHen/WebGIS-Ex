@@ -10,7 +10,7 @@ class Guide extends React.Component {
         <>
         <div class="guide-box">
             <h5>User Guide:</h5>
-            <p>
+            <p style={{fontSize:'100%'}}>
               <b>Traveling on the map:</b> hold the left mouse button,
               then drag the mouse to the desired location and release.<br/>
               <b>Change map angle:</b> hold the right mouse button,
