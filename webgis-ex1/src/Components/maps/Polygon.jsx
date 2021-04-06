@@ -64,14 +64,15 @@ class Polygon extends React.Component {
   render() {
     return (
         <>
-        <Guide guidance = {this.state.guidance}/>
-        <div class="calculation-box">
-            <p>
-              Draw a polygon using the draw tools.
-              <div id="calculated-area"></div>
-            </p>
-        </div>
-    </>
+          <Guide guidance = {this.state.guidance}/>
+          <Menu/>
+          <div class="calculation-box">
+              <p>
+                Draw a polygon using the draw tools.
+                <div id="calculated-area"></div>
+              </p>
+          </div>
+         </>
     )
   }
 }
