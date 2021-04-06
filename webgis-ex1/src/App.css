@@ -123,28 +123,28 @@ footer {
 
   #menu {
     height: auto;
-    width: 18%;
+    width: 20%;
     position: fixed;
-    bottom: 38%;
-    left: 2%;
+    top: 20%;
+    right: 15%;
     background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
     background: #efefef;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
-    margin-right: 10%;
+    margin-right: 8%;
     }
 
     label{
-      margin-right: 4%;
+      margin-right: 1%;
     }
+
     .map-overlay {
       font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
       position: absolute;
       width: 200px;
-      top: 0;
-      left: 0;
-      padding: 10px;
+      bottom: 0%;
+      left: 0%;
       }
        
       .map-overlay .map-overlay-inner {
