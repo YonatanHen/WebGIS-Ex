@@ -79,7 +79,7 @@ class Polygon extends React.Component {
     return (
         <>
           <Guide guidance = {this.state.guidance}/>
-          <Menu></Menu>
+          <Menu/>
           <div class="calculation-box">
               <p>
                 Draw a polygon using the draw tools.
