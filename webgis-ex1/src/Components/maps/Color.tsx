@@ -5,19 +5,11 @@ class Color extends React.Component <any, any> {
   constructor(props: any) {
     super(props)
     this.state = {
-<<<<<<< HEAD:webgis-ex1/src/Components/maps/Color.jsx
-      guidance: <>
-      <b>Select layer:</b> click on the combo-box below and choose between water or buildings.<br/>
-      <b>Choose a color:</b> click on the color you want to change the layer's color
-      <div class="map-overlay top">
-            <div class="map-overlay-inner">
-=======
       guidance: (<>
       <b>Draw line:</b> click on the map to draw a line.<br/>
       <b>Delete line:</b> click on desired dot to delete the line which finished in this dot, new line will
       adujested automatically.
             <div className="map-overlay-inner">
->>>>>>> Yonatan:webgis-ex1/src/Components/maps/Color.tsx
               <fieldset>
                 <label>Select layer</label>
                   <select id="layer" name="layer">
@@ -30,12 +22,7 @@ class Color extends React.Component <any, any> {
                <div id="swatches"></div>
               </fieldset>
            </div>
-<<<<<<< HEAD:webgis-ex1/src/Components/maps/Color.jsx
-        </div>
-      </>
-=======
       </>)
->>>>>>> Yonatan:webgis-ex1/src/Components/maps/Color.tsx
     }
   }
 
