@@ -2,8 +2,8 @@ import React from 'react';
 import Guide from '../guide';
 import Menu from '../Menu';
 
-class Polygon extends React.Component {
-  constructor(props) {
+class Polygon extends React.Component <any, any> {
+  constructor(props: any) {
     super(props)
     this.state = {
       guidance:<>
@@ -80,7 +80,7 @@ class Polygon extends React.Component {
         <>
           <Guide guidance = {this.state.guidance}/>
           <Menu/>
-          <div class="calculation-box">
+          <div className="calculation-box">
               <p>
                 Draw a polygon using the draw tools.
                 <div id="calculated-area"></div>

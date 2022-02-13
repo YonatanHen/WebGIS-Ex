@@ -1,15 +1,15 @@
 import React from 'react';
 import Guide from '../guide';
 
-class Color extends React.Component {
-  constructor(props) {
+class Color extends React.Component <any, any> {
+  constructor(props: any) {
     super(props)
     this.state = {
-      guidance: <>
+      guidance: (<>
       <b>Draw line:</b> click on the map to draw a line.<br/>
       <b>Delete line:</b> click on desired dot to delete the line which finished in this dot, new line will
       adujested automatically.
-            <div class="map-overlay-inner">
+            <div className="map-overlay-inner">
               <fieldset>
                 <label>Select layer</label>
                   <select id="layer" name="layer">
@@ -22,7 +22,7 @@ class Color extends React.Component {
                <div id="swatches"></div>
               </fieldset>
            </div>
-      </>
+      </>)
     }
   }
 

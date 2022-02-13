@@ -1,14 +1,11 @@
 import React from 'react';
 
-class Guide extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+class Guide extends React.Component <any, any> {
 
   render() {
     return (
         <>
-        <div class="guide-box">
+        <div className="guide-box">
             <h5>User Guide:</h5>
             <p>
               <b>Traveling on the map:</b> hold the left mouse button,

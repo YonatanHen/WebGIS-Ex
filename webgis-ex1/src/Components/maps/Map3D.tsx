@@ -2,9 +2,6 @@ import React from 'react';
 import Guide from '../guide';
 
 class Map3D extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount () {
     const code = `mapboxgl.accessToken = 'pk.eyJ1IjoieW9uYTMzMyIsImEiOiJja2ZuamNodzAwZG92MnltcTl5eG12NGl4In0.dfVOhCUagbvm7ZXCGlEbDQ'
