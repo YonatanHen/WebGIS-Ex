@@ -4,8 +4,12 @@ import Polygon from './maps/Polygon';
 import Color from './maps/Color';
 import {Dropdown, DropdownButton} from 'react-bootstrap'
 
-class Home extends Component{
-    constructor(props) {
+interface HomeState {
+    map: any;
+}
+
+class Home extends Component <any, HomeState>{
+    constructor(props: any) {
         super(props)
         this.state = {
             map: <Polygon/>
@@ -17,8 +21,9 @@ class Home extends Component{
     }
 
     removeContainer = () => {
-        if(document.querySelector('.mapboxgl-control-container')){
-            document.querySelector('.mapboxgl-control-container').remove();
+        const container = document.querySelector('.mapboxgl-control-container')
+        if(container){
+            container.remove();
         }
     }
 

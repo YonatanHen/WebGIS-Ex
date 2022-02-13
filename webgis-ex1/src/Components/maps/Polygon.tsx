@@ -2,8 +2,8 @@ import React from 'react';
 import Guide from '../guide';
 import Menu from '../Menu';
 
-class Polygon extends React.Component {
-  constructor(props) {
+class Polygon extends React.Component <any, any> {
+  constructor(props: any) {
     super(props)
     this.state = {
       guidance:<>
@@ -79,9 +79,14 @@ class Polygon extends React.Component {
         <>
           <div className="flex-wrapper">
           <Guide guidance = {this.state.guidance}/>
+<<<<<<< HEAD:webgis-ex1/src/Components/maps/Polygon.jsx
             <Menu/>
           </div>
           <div class="calculation-box">
+=======
+          <Menu/>
+          <div className="calculation-box">
+>>>>>>> Yonatan:webgis-ex1/src/Components/maps/Polygon.tsx
               <p>
                 Draw a polygon using the draw tools.
                 <div id="calculated-area"></div>
